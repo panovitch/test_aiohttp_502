@@ -1,0 +1,10 @@
+# put this file in your apache sites-enabled folder
+# and run the following to enable proxies:
+# sudo a2enmod proxy
+# sudo a2enmod proxy_http
+
+
+<Location /test/>
+ProxyPass http://localhost:8080/ retry=0 Keepalive=On
+ProxyPassReverse http://localhost:8080/
+</Location>
